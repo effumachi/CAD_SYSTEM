@@ -170,7 +170,6 @@ class Application:
         self.txtusuario.delete(0, END)
         self.txtsenha.delete(0, END)
 
-
     def buscarUsuario(self):
         user = Usuarios()
 
