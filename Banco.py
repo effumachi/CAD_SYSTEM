@@ -8,9 +8,9 @@ class Banco():
 
     def createTable(self):
         c = self.conexao.cursor()
-
+        # idusuario integer primary key autoincrement
         c.execute("""create table if not exists usuarios (
-                    idusuario integer primary key autoincrement ,
+                    idusuario primary key,
                     nome text,
                     telefone text,
                     email text,

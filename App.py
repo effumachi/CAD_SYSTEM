@@ -80,7 +80,7 @@ class Application:
         self.txtemail["font"] = self.fonte
         self.txtemail.pack(side=LEFT)
 
-        self.lblusuario= Label(self.container6, text="Usuário:",font=self.fonte, width=10)
+        self.lblusuario= Label(self.container6, text="RA",font=self.fonte, width=10)
         self.lblusuario.pack(side=LEFT)
 
         self.txtusuario = Entry(self.container6)
@@ -88,12 +88,12 @@ class Application:
         self.txtusuario["font"] = self.fonte
         self.txtusuario.pack(side=LEFT)
 
-        self.lblsenha= Label(self.container7, text="Senha:",font=self.fonte, width=10)
+        self.lblsenha= Label(self.container7, text="RG",font=self.fonte, width=10)
         self.lblsenha.pack(side=LEFT)
 
         self.txtsenha = Entry(self.container7)
         self.txtsenha["width"] = 25
-        self.txtsenha["show"] = "*"
+        #self.txtsenha["show"] = "*"
         self.txtsenha["font"] = self.fonte
         self.txtsenha.pack(side=LEFT)
 
@@ -117,6 +117,7 @@ class Application:
     def inserirUsuario(self):
         user = Usuarios()
 
+        user.idusuario = self.txtidusuario.get()
         user.nome = self.txtnome.get()
         user.telefone = self.txttelefone.get()
         user.email = self.txtemail.get()

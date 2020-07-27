@@ -1,7 +1,7 @@
 from Banco import Banco
 
 class Usuarios(object):
-    def __init__(self, idusuario = "", nome = "", telefone = "",email = "", usuario = "", senha = ""):
+    def __init__(self, idusuario = 0, nome = "", telefone = "",email = "", usuario = "", senha = ""):
         self.info = {}
         self.idusuario = idusuario
         self.nome = nome
@@ -14,7 +14,7 @@ class Usuarios(object):
         banco = Banco()
         try:
             c = banco.conexao.cursor()
-            c.execute("insert into usuarios (idusuario, nome, telefone, email,usuario, senha) values ('" + self.idusuario + "','" + self.nome + "', '" +
+            c.execute("insert into usuarios (nome, telefone, email,usuario, senha) values ('" + self.nome + "', '" +
             self.telefone + "', '" + self.email + "', '" +
             self.usuario + "', '" + self.senha + "' )")
             banco.conexao.commit()
@@ -27,7 +27,7 @@ class Usuarios(object):
         banco = Banco()
         try:
             c = banco.conexao.cursor()
-            c.execute("update usuarios set idusuario = '" + self.idusuario + "', nome = '" + self.nome + "',telefone = '" + self.telefone + "', email = '" + self.email +"', usuario = '" + self.usuario + "', senha = '" + self.senha +"' where idusuario = " + self.idusuario + " ")
+            c.execute("update usuarios set nome = '" + self.nome + "',telefone = '" + self.telefone + "', email = '" + self.email +"', usuario = '" + self.usuario + "', senha = '" + self.senha +"' where idusuario = " + self.idusuario + " ")
             banco.conexao.commit()
             c.close()
             return "Usuário atualizado com sucesso!"
