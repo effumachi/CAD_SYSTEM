@@ -44,7 +44,7 @@ class Application:
         self.titulo["font"] = ("Calibri", "12", "bold")
         self.titulo.pack ()
 
-        self.lblidusuario = Label(self.container2,text="PRONTUÁRIO", font=self.fonte, width=10)
+        self.lblidusuario = Label(self.container2,text="RA: ", font=self.fonte, width=10)
         self.lblidusuario.pack(side=LEFT)
 
         self.txtidusuario = Entry(self.container2)
